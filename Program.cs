@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-/* From going through the Wikipedia article
+/* From going through the Wikipedia article about Quick Sort
  * 
  * 
  * 
@@ -76,8 +76,11 @@ namespace QuickSort
             //               start       pivot           end
             //               0   1   2   3   4   5   6   7
             //int[] argh = { 15, 95, 66, 72, 42, 38, 39, 51 };
+
             //               15, 51, 66, 72, 42, 38, 39, 95  
-            //               15, 51, 66, 
+            //               15, 51, 66, 39, 42, 38, 72, 95
+            //               15, 38, 66, 39, 42, 51, 72, 95
+            //               15, 38, 51, 39, 42, 66, 72, 95
    
             int pivot = left + (right - left) / 2;  // each recurssion will take start and end into consideration
 
@@ -121,7 +124,7 @@ namespace QuickSort
             }
         }
 
-        // First attempt
+        // First attempt without reading to much into it
         //static void Quicky(int[] arr)
         //{
         //    int pivotValue = 0;
@@ -153,14 +156,4 @@ namespace QuickSort
         //    }
         //}
     }
-
-    //               72, 95, 66, 15, 42, 38, 39, 51
-    //               72, 51, 66, 15, 42, 38, 39, 95
-    //               39, 51, 66, 15, 42, 38, 72, 95
-    //               ------------------------------
-    //               39, 51, 66, 15, 42, 38
-    //               66, 51, 39, 15, 42, 38
-    //               38, 51, 39, 15, 42, 66
-    //               ----------------------
-    //               38     
 }
