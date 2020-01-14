@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-/* From going through the Wikipedia article about Quick Sort
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+/* From going through the Wikipedia article about Quick Sort.
  */
 
 namespace QuickSort
@@ -76,12 +68,16 @@ namespace QuickSort
             //               start       pivot           end
             //               0   1   2   3   4   5   6   7
             //int[] argh = { 15, 95, 66, 72, 42, 38, 39, 51 };
-
             //               15, 51, 66, 72, 42, 38, 39, 95  
             //               15, 51, 66, 39, 42, 38, 72, 95
-            //               15, 38, 66, 39, 42, 51, 72, 95
-            //               15, 38, 51, 39, 42, 66, 72, 95
-   
+            //                       pivot
+            //               15, 38, 66, 39, 42, 51, 72
+            //                       pivot
+            //               15, 38, 51, 39, 42, 66
+            //                   pivot
+            //               15, 38, 42, 39, 51
+            //               ------------------------------
+            //               15, 38, 39, 42, 51, 66, 72, 95
             int pivot = left + (right - left) / 2;  // each recurssion will take start and end into consideration
 
             while (true)
